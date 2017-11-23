@@ -38,7 +38,7 @@
                     <navigationItem key="navigationItem" title="Event Keeper" id="7cg-jl-dcj">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="0Fw-xg-lGO">
                             <connections>
-                                <segue destination="1sa-Bw-wml" kind="show" id="ZSt-hw-WHi"/>
+                                <segue destination="iTI-dl-ION" kind="show" id="RsW-JG-Kj9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -46,6 +46,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="704.79999999999995" y="148.87556221889056"/>
+        </scene>
+        <!--AddViewController-->
+        <scene sceneID="wbk-sW-2sw">
+            <objects>
+                <viewController title="AddViewController" id="YJO-kH-ceX" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oJJ-CR-Bwd"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q1n-O0-KCl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wn0-01-myM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Details" image="DetailsIcon" id="stJ-T0-nX8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="54i-9a-8IP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2404" y="-161"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="Ob9-7x-Nok">
+            <objects>
+                <viewController id="mJd-Fz-voB" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9zb-mT-APP"/>
+                        <viewControllerLayoutGuide type="bottom" id="mfp-UI-Ah6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="35n-eW-3Rx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="vmg-ua-rMF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U4V-G4-Chf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2404" y="521"/>
         </scene>
         <!--DetailView-->
         <scene sceneID="8TS-28-sD1">
@@ -65,47 +103,43 @@
             </objects>
             <point key="canvasLocation" x="705" y="961"/>
         </scene>
-        <!--AddView-->
-        <scene sceneID="48z-LN-fFf">
+        <!--Send-->
+        <scene sceneID="jGP-Sa-MZM">
             <objects>
-                <viewController title="AddView" id="1sa-Bw-wml" sceneMemberID="viewController">
+                <viewController id="X6B-6X-PZh" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vQz-tV-cCU"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ibi-e2-vct"/>
+                        <viewControllerLayoutGuide type="top" id="vHv-A7-uMW"/>
+                        <viewControllerLayoutGuide type="bottom" id="7ma-rc-PWE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="f4l-c7-qeN">
+                    <view key="view" contentMode="scaleToFill" id="RzA-No-GkK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4t-YL-0sa">
-                                <rect key="frame" x="166" y="94" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rjw-13-lnm">
-                                <rect key="frame" x="0.0" y="123" width="375" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SXY-2x-CNE">
-                                <rect key="frame" x="0.0" y="186" width="375" height="461"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Send" image="SendIcon" id="LBo-pZ-ULb"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3eO-ae-N2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L99-DR-9Uw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1480.8" y="148.87556221889056"/>
+            <point key="canvasLocation" x="1527" y="1053"/>
+        </scene>
+        <!--Calendar-->
+        <scene sceneID="VPc-v1-8NH">
+            <objects>
+                <viewController id="SrA-q0-JG3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="A0w-EY-aWM"/>
+                        <viewControllerLayoutGuide type="bottom" id="AQP-bm-ls2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cTz-sH-N9t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="CalendarIcon" id="YWA-7w-phY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ft5-rA-CDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2362" y="1231"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oyG-wo-4nJ">
@@ -125,5 +159,31 @@
             </objects>
             <point key="canvasLocation" x="-234.40000000000001" y="148.87556221889056"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="UTa-H8-V9T">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="iTI-dl-ION" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="eLr-EH-lbh">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="YJO-kH-ceX" kind="relationship" relationship="viewControllers" id="uIK-VI-23R"/>
+                        <segue destination="mJd-Fz-voB" kind="relationship" relationship="viewControllers" id="maO-j7-JEB"/>
+                        <segue destination="SrA-q0-JG3" kind="relationship" relationship="viewControllers" id="sXb-fP-9Fo"/>
+                        <segue destination="X6B-6X-PZh" kind="relationship" relationship="viewControllers" id="5XR-LE-9Dn"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9LI-4B-Hqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1568.8" y="142.57871064467767"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="CalendarIcon" width="39" height="32"/>
+        <image name="DetailsIcon" width="48" height="32"/>
+        <image name="MapIcon" width="48" height="32"/>
+        <image name="SendIcon" width="43" height="29"/>
+    </resources>
 </document>
