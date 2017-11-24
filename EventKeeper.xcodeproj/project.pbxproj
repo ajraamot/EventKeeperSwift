@@ -23,6 +23,7 @@
 		E25FFED31FC6F61700F1F3A5 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E25FFED11FC6F61700F1F3A5 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E25FFED41FC6F61700F1F3A5 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E25FFED21FC6F61700F1F3A5 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E25FFED61FC6F6B600F1F3A5 /* ViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25FFED51FC6F6B600F1F3A5 /* ViewControllerSpec.swift */; };
+		E25FFED81FC7566E00F1F3A5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25FFED71FC7566E00F1F3A5 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		E25FFED11FC6F61700F1F3A5 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		E25FFED21FC6F61700F1F3A5 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		E25FFED51FC6F6B600F1F3A5 /* ViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSpec.swift; sourceTree = "<group>"; };
+		E25FFED71FC7566E00F1F3A5 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				E25FFE971FC6EDA500F1F3A5 /* AppDelegate.swift */,
 				E25FFE991FC6EDA500F1F3A5 /* ViewController.swift */,
 				E25FFE9B1FC6EDA500F1F3A5 /* Main.storyboard */,
+				E25FFED71FC7566E00F1F3A5 /* MapViewController.swift */,
 				E25FFEA11FC6EDA500F1F3A5 /* Assets.xcassets */,
 				E25FFEA31FC6EDA500F1F3A5 /* LaunchScreen.storyboard */,
 				E25FFEA61FC6EDA500F1F3A5 /* Info.plist */,
@@ -268,6 +271,7 @@
 				E25FFEBB1FC6EFDC00F1F3A5 /* Event.swift in Sources */,
 				E25FFEBF1FC6F1CD00F1F3A5 /* AddViewController.swift in Sources */,
 				E25FFEA01FC6EDA500F1F3A5 /* EventKeeper.xcdatamodeld in Sources */,
+				E25FFED81FC7566E00F1F3A5 /* MapViewController.swift in Sources */,
 				E25FFE9A1FC6EDA500F1F3A5 /* ViewController.swift in Sources */,
 				E25FFEC31FC6F39A00F1F3A5 /* ListCell.swift in Sources */,
 				E25FFE981FC6EDA500F1F3A5 /* AppDelegate.swift in Sources */,

@@ -20,7 +20,7 @@ class AddViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
+        print("in AddViewController")
         titleText.backgroundColor = UIColor.black.withAlphaComponent(0.2)
         eventDetails.backgroundColor = UIColor.black.withAlphaComponent(0.2)
         

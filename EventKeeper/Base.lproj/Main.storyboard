@@ -77,6 +77,15 @@
                     <view key="view" contentMode="scaleToFill" id="35n-eW-3Rx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Map" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFM-0P-GsK">
+                                <rect key="frame" x="166" y="136" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="vmg-ua-rMF"/>
@@ -133,13 +142,22 @@
                     <view key="view" contentMode="scaleToFill" id="cTz-sH-N9t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calendar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bb-qE-zjU">
+                                <rect key="frame" x="128" y="111" width="109" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calendar" image="CalendarIcon" id="YWA-7w-phY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ft5-rA-CDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2362" y="1231"/>
+            <point key="canvasLocation" x="2360.8000000000002" y="1230.1349325337333"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oyG-wo-4nJ">
@@ -181,7 +199,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CalendarIcon" width="39" height="32"/>
+        <image name="CalendarIcon" width="72" height="48"/>
         <image name="DetailsIcon" width="48" height="32"/>
         <image name="MapIcon" width="48" height="32"/>
         <image name="SendIcon" width="43" height="29"/>
