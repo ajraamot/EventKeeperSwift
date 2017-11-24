@@ -13,7 +13,7 @@ class AddViewController: UIViewController {
     @IBOutlet var titleText: UITextField!
     @IBOutlet var eventDetails: UITextView!
     @IBOutlet var doneButton: UIBarButtonItem!
-    @IBOutlet var addButton: UIButton!
+//    @IBOutlet var addButton: UIButton!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
@@ -24,7 +24,7 @@ class AddViewController: UIViewController {
         titleText.backgroundColor = UIColor.black.withAlphaComponent(0.2)
         eventDetails.backgroundColor = UIColor.black.withAlphaComponent(0.2)
         
-        addButton.isEnabled = false
+//        addButton.isEnabled = false
         
         NotificationCenter.default.addObserver(self, selector: #selector(AddViewController.textTitleDidChange), name: NSNotification.Name.UITextFieldTextDidChange, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(AddViewController.eventDetailsDidChange), name: NSNotification.Name.UITextViewTextDidChange, object: nil)
@@ -36,11 +36,11 @@ class AddViewController: UIViewController {
     }
     
     func textTitleDidChange(){
-        handleButtonStates()
+//        handleButtonStates()
     }
     
     func eventDetailsDidChange(){
-        handleButtonStates()
+//        handleButtonStates()
     }
     
     @IBAction func doneButton_click(_ sender: AnyObject) {
@@ -62,29 +62,29 @@ class AddViewController: UIViewController {
         }
         
         //handle add button
-        if(titleText.text != "" && eventDetails.text != ""){
-            addButton.isEnabled = true
-            addButton.setTitleColor(UIColor.white, for: UIControlState())
-        }
-        else {
-            addButton.isEnabled = false
-            addButton.setTitleColor(UIColor.lightGray, for: UIControlState())
-        }
+//        if(titleText.text != "" && eventDetails.text != ""){
+//            addButton.isEnabled = true
+//            addButton.setTitleColor(UIColor.white, for: UIControlState())
+//        }
+//        else {
+//            addButton.isEnabled = false
+//            addButton.setTitleColor(UIColor.lightGray, for: UIControlState())
+//        }
     }
     
-    @IBAction func addButton_click(_ sender: AnyObject) {
-        
-        activityIndicator.startAnimating()
-        
-        EventManager.AddEvent(titleText.text!, details: eventDetails.text)
-        titleText.text = ""
-        eventDetails.text = ""
-        
-        let time = DispatchTime.now() + Double(Int64(0.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-        DispatchQueue.main.asyncAfter(deadline: time){
-            self.activityIndicator.stopAnimating()
-        }
-    }
+//    @IBAction func addButton_click(_ sender: AnyObject) {
+//        
+//        activityIndicator.startAnimating()
+//        
+//        EventManager.AddEvent(titleText.text!, details: eventDetails.text)
+//        titleText.text = ""
+//        eventDetails.text = ""
+//        
+//        let time = DispatchTime.now() + Double(Int64(0.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+//        DispatchQueue.main.asyncAfter(deadline: time){
+//            self.activityIndicator.stopAnimating()
+//        }
+//    }
     
     /*
      // MARK: - Navigation
