@@ -47,6 +47,25 @@
             </objects>
             <point key="canvasLocation" x="704.79999999999995" y="148.87556221889056"/>
         </scene>
+        <!--Photos-->
+        <scene sceneID="X6W-m5-9a8">
+            <objects>
+                <viewController id="Xci-3D-Lag" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KGH-Ua-OdU"/>
+                        <viewControllerLayoutGuide type="bottom" id="0sI-xy-Xf8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KyC-zT-mko">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Photos" image="PhotosIcon" id="ngY-nP-ZEK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z0e-OR-5Jd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2361" y="143"/>
+        </scene>
         <!--AddViewController-->
         <scene sceneID="wbk-sW-2sw">
             <objects>
@@ -64,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="54i-9a-8IP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2404" y="-161"/>
+            <point key="canvasLocation" x="1569" y="-564"/>
         </scene>
         <!--Map-->
         <scene sceneID="Ob9-7x-Nok">
@@ -92,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U4V-G4-Chf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2404" y="521"/>
+            <point key="canvasLocation" x="2361" y="-564"/>
         </scene>
         <!--DetailView-->
         <scene sceneID="8TS-28-sD1">
@@ -129,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L99-DR-9Uw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1527" y="1053"/>
+            <point key="canvasLocation" x="1569" y="959"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="VPc-v1-8NH">
@@ -157,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ft5-rA-CDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2360.8000000000002" y="1230.1349325337333"/>
+            <point key="canvasLocation" x="2361" y="960"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oyG-wo-4nJ">
@@ -189,8 +208,9 @@
                     <connections>
                         <segue destination="YJO-kH-ceX" kind="relationship" relationship="viewControllers" id="uIK-VI-23R"/>
                         <segue destination="mJd-Fz-voB" kind="relationship" relationship="viewControllers" id="maO-j7-JEB"/>
-                        <segue destination="SrA-q0-JG3" kind="relationship" relationship="viewControllers" id="sXb-fP-9Fo"/>
-                        <segue destination="X6B-6X-PZh" kind="relationship" relationship="viewControllers" id="5XR-LE-9Dn"/>
+                        <segue destination="Xci-3D-Lag" kind="relationship" relationship="viewControllers" id="0dK-6f-Vft"/>
+                        <segue destination="SrA-q0-JG3" kind="relationship" relationship="viewControllers" id="c9K-KK-9Ik"/>
+                        <segue destination="X6B-6X-PZh" kind="relationship" relationship="viewControllers" id="yvb-L2-qdS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9LI-4B-Hqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -199,9 +219,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CalendarIcon" width="72" height="48"/>
+        <image name="CalendarIcon" width="48" height="32"/>
         <image name="DetailsIcon" width="48" height="32"/>
         <image name="MapIcon" width="48" height="32"/>
+        <image name="PhotosIcon" width="48" height="32"/>
         <image name="SendIcon" width="43" height="29"/>
     </resources>
 </document>
