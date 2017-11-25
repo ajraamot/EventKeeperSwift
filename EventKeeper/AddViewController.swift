@@ -13,7 +13,7 @@ class AddViewController: UIViewController {
     @IBOutlet var titleText: UITextField!
     @IBOutlet var eventDetails: UITextView!
     @IBOutlet var doneButton: UIBarButtonItem!
-//    @IBOutlet var addButton: UIButton!
+    @IBOutlet var saveButton: UIButton!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
@@ -21,13 +21,14 @@ class AddViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         print("in AddViewController")
-        titleText.backgroundColor = UIColor.black.withAlphaComponent(0.2)
-        eventDetails.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+        titleText.backgroundColor = UIColor.blue.withAlphaComponent(0.1)
+        eventDetails.backgroundColor = UIColor.blue.withAlphaComponent(0.1)
         
-//        addButton.isEnabled = false
+        saveButton.isEnabled = false
         
         NotificationCenter.default.addObserver(self, selector: #selector(AddViewController.textTitleDidChange), name: NSNotification.Name.UITextFieldTextDidChange, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(AddViewController.eventDetailsDidChange), name: NSNotification.Name.UITextViewTextDidChange, object: nil)
+        eventDetails.text = ""
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,11 +37,11 @@ class AddViewController: UIViewController {
     }
     
     func textTitleDidChange(){
-//        handleButtonStates()
+        handleButtonStates()
     }
     
     func eventDetailsDidChange(){
-//        handleButtonStates()
+        handleButtonStates()
     }
     
     @IBAction func doneButton_click(_ sender: AnyObject) {
@@ -55,36 +56,37 @@ class AddViewController: UIViewController {
     func handleButtonStates(){
         //handle done button
         if(eventDetails.text != ""){
-            doneButton.isEnabled = true
+//            doneButton.isEnabled = true
         }
         else {
-            doneButton.isEnabled = false
+//            doneButton.isEnabled = false
         }
         
-        //handle add button
-//        if(titleText.text != "" && eventDetails.text != ""){
-//            addButton.isEnabled = true
-//            addButton.setTitleColor(UIColor.white, for: UIControlState())
-//        }
-//        else {
-//            addButton.isEnabled = false
-//            addButton.setTitleColor(UIColor.lightGray, for: UIControlState())
-//        }
+        //handle save button
+        if(titleText.text != "" && eventDetails.text != ""){
+            saveButton.isEnabled = true
+            saveButton.setTitleColor(UIColor.white, for: UIControlState())
+        }
+        else {
+            saveButton.isEnabled = false
+            saveButton.setTitleColor(UIColor.lightGray, for: UIControlState())
+        }
     }
     
-//    @IBAction func addButton_click(_ sender: AnyObject) {
-//        
-//        activityIndicator.startAnimating()
-//        
-//        EventManager.AddEvent(titleText.text!, details: eventDetails.text)
-//        titleText.text = ""
-//        eventDetails.text = ""
-//        
-//        let time = DispatchTime.now() + Double(Int64(0.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-//        DispatchQueue.main.asyncAfter(deadline: time){
-//            self.activityIndicator.stopAnimating()
-//        }
-//    }
+    @IBAction func saveButton_click(_ sender: AnyObject) {
+        print("Save button clicked")
+        
+        activityIndicator.startAnimating()
+        
+        EventManager.AddEvent(titleText.text!, details: eventDetails.text)
+        titleText.text = ""
+        eventDetails.text = ""
+        
+        let time = DispatchTime.now() + Double(Int64(0.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: time){
+            self.activityIndicator.stopAnimating()
+        }
+    }
     
     /*
      // MARK: - Navigation
