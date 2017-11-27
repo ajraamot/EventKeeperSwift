@@ -13,24 +13,32 @@ class ViewControllerSpec: QuickSpec {
     override func spec() {
         describe("ViewController") {
             var subject: ViewController!
-            beforeEach {
-                subject = UIStoryboard(name: "Main", bundle:
-                    nil).instantiateViewController(withIdentifier:
-                        "ViewController") as! ViewController
+//            beforeEach() {
+//                subject = UIStoryboard(name: "Main", bundle:
+//                    nil).instantiateViewController(withIdentifier:
+//                        "ViewController") as! ViewController
+//                _ = subject.view
+//            }
+            
+            beforeEach() {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let viewController = storyboard.instantiateViewController(
+                    withIdentifier: "ViewController")
+                subject = viewController as! ViewController
                 _ = subject.view
             }
 
-//            context("when the view loaded") {
-//                it("should return 3") {
-//                    expect(subject.returnThree()).to(equal(3))
-//                }
-//            }
-//            
-//            context("when the view loaded") {
-//                it("should have the correct row height") {
-//                    expect(subject.rowHeight).to(equal(70))
-//                }
-//            }
+            context("when the view loaded") {
+                it("should return 3") {
+                    expect(subject.returnThree()).to(equal(3))
+                }
+            }
+            
+            context("when the view loaded") {
+                it("should have the correct row height") {
+                    expect(subject.tableView.rowHeight).to(equal(50))
+                }
+            }
         }
     }
 }

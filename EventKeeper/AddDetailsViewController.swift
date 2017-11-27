@@ -1,5 +1,5 @@
 //
-//  AddViewController.swift
+//  AddDetailsViewController.swift
 //  EventKeeper
 //
 //  Created by Raamot, Andrew on 11/23/17.
@@ -7,28 +7,32 @@
 //
 
 import UIKit
+import MapKit
 
-class AddViewController: UIViewController {
+class AddDetailsViewController: UIViewController {
     
     @IBOutlet var titleText: UITextField!
     @IBOutlet var eventDetails: UITextView!
-    @IBOutlet var doneButton: UIBarButtonItem!
+//    @IBOutlet var doneButton: UIBarButtonItem!
     @IBOutlet var saveButton: UIButton!
+    @IBOutlet var cancelButton: UIButton!
+    
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        print("in AddViewController")
+        print("in AddDetailsViewController")
         titleText.backgroundColor = UIColor.blue.withAlphaComponent(0.1)
         eventDetails.backgroundColor = UIColor.blue.withAlphaComponent(0.1)
         
         saveButton.isEnabled = false
         
-        NotificationCenter.default.addObserver(self, selector: #selector(AddViewController.textTitleDidChange), name: NSNotification.Name.UITextFieldTextDidChange, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(AddViewController.eventDetailsDidChange), name: NSNotification.Name.UITextViewTextDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(AddDetailsViewController.textTitleDidChange), name: NSNotification.Name.UITextFieldTextDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(AddDetailsViewController.eventDetailsDidChange), name: NSNotification.Name.UITextViewTextDidChange, object: nil)
         eventDetails.text = ""
+        cancelButton.isEnabled = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -44,23 +48,21 @@ class AddViewController: UIViewController {
         handleButtonStates()
     }
     
-    @IBAction func doneButton_click(_ sender: AnyObject) {
-        eventDetails.resignFirstResponder()
-    }
+//    @IBAction func doneButton_click(_ sender: AnyObject) {
+//        eventDetails.resignFirstResponder()
+//    }
+//    
+//    @IBAction func titleDoneButton_click(_ sender: AnyObject) {
+//        titleText.resignFirstResponder()
+//    }
     
-    @IBAction func titleDoneButton_click(_ sender: AnyObject) {
-        titleText.resignFirstResponder()
+    @IBAction func cancelButton_click(_ sender: AnyObject) {
+            print("Cancel button clicked")
     }
-    
     
     func handleButtonStates(){
-        //handle done button
-        if(eventDetails.text != ""){
-//            doneButton.isEnabled = true
-        }
-        else {
-//            doneButton.isEnabled = false
-        }
+        //handle cancel button
+        cancelButton.isEnabled = true
         
         //handle save button
         if(titleText.text != "" && eventDetails.text != ""){
@@ -78,7 +80,7 @@ class AddViewController: UIViewController {
         
         activityIndicator.startAnimating()
         
-        EventManager.AddEvent(titleText.text!, details: eventDetails.text)
+        EventManager.AddEvent(titleText.text!, details: eventDetails.text, locations: nil) // TODO: This should not be nil
         titleText.text = ""
         eventDetails.text = ""
         

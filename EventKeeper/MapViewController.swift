@@ -19,6 +19,26 @@ class MapViewController : UIViewController, MKMapViewDelegate {
     let home = MKPointAnnotation()
     
     
+    /* To convert address to coordinates (Need to import CoreLocation)
+     
+     let address = "1 Infinite Loop, Cupertino, CA 95014"
+     
+     let geoCoder = CLGeocoder()
+     geoCoder.geocodeAddressString(address) { (placemarks, error) in
+     guard
+     let placemarks = placemarks,
+     let location = placemarks.first?.location
+     else {
+     // handle no location found
+     return
+     }
+     
+     // Use your location
+     }
+     
+     */
+    
+    
     override func loadView() {
         mapView = MKMapView()
         view = mapView

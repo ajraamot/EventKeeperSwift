@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import MapKit
 
 class EventManager: NSObject {
     static var events = [Event]()
     
-    class func AddEvent(_ title: String, details: String){
-        let e = Event(title: title, details: details)
+    class func AddEvent(_ title: String, details: String?, locations: Array<CLLocationCoordinate2D?>?
+//        , photos: Array<UIImage>
+        ){
+        let e = Event(title: title, details: details, locations: locations)
+        
+//        let e = Event(title: title, details: details, locations: Array<CLLocationCoordinate2D>, photos: Array<UIImage>)
+        
         events.append(e)
     }
     

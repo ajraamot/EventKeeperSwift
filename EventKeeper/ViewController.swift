@@ -15,12 +15,12 @@ class ViewController: UITableViewController {
     }
     
     // TODO: Replace array with CoreData
-    let array = ["item1", "item2", "item3"]
+    let array = ["Foo", "Bar", "Blah"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-//        tableView.rowHeight = 70
+        tableView.rowHeight = 50
         
     }
     

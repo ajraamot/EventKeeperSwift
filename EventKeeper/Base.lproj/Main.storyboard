@@ -12,7 +12,7 @@
         <!--Event Keeper-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EventKeeper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="EventKeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="y9h-mH-pZk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -66,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="2361" y="143"/>
         </scene>
-        <!--AddViewController-->
+        <!--Add Details-->
         <scene sceneID="wbk-sW-2sw">
             <objects>
-                <viewController title="AddViewController" id="YJO-kH-ceX" customClass="AddViewController" customModule="EventKeeper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddDetailsViewController" title="Add Details" id="YJO-kH-ceX" customClass="AddDetailsViewController" customModule="EventKeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oJJ-CR-Bwd"/>
                         <viewControllerLayoutGuide type="bottom" id="Q1n-O0-KCl"/>
@@ -108,11 +108,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvw-gG-niE">
-                                <rect key="frame" x="88" y="583" width="106" height="32"/>
+                                <rect key="frame" x="312" y="65" width="50" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Save"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DMS-GT-xMJ">
+                                <rect key="frame" x="230" y="65" width="50" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Cancel"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -121,6 +128,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="cancelButton" destination="DMS-GT-xMJ" id="0qe-Q0-qyE"/>
                         <outlet property="eventDetails" destination="kip-Sj-cHh" id="rsJ-RG-YYx"/>
                         <outlet property="saveButton" destination="nvw-gG-niE" id="QNT-WJ-KBl"/>
                         <outlet property="titleText" destination="jxW-CN-BMk" id="Di7-Yi-VQv"/>
@@ -133,7 +141,7 @@
         <!--Map-->
         <scene sceneID="Ob9-7x-Nok">
             <objects>
-                <viewController id="mJd-Fz-voB" customClass="MapViewController" customModule="EventKeeper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="mJd-Fz-voB" customClass="MapViewController" customModule="EventKeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="rkY-bQ-IF6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

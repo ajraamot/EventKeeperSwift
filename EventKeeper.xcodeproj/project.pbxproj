@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2101E6F1FCAFE1B00515A6F /* EventSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2101E6E1FCAFE1B00515A6F /* EventSpec.swift */; };
+		E2101E711FCB9F7E00515A6F /* EventManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2101E701FCB9F7E00515A6F /* EventManagerSpec.swift */; };
+		E2101E731FCBAD7B00515A6F /* MapViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2101E721FCBAD7B00515A6F /* MapViewControllerSpec.swift */; };
 		E25FFE981FC6EDA500F1F3A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25FFE971FC6EDA500F1F3A5 /* AppDelegate.swift */; };
 		E25FFE9A1FC6EDA500F1F3A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25FFE991FC6EDA500F1F3A5 /* ViewController.swift */; };
 		E25FFE9D1FC6EDA500F1F3A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E25FFE9B1FC6EDA500F1F3A5 /* Main.storyboard */; };
@@ -15,7 +18,7 @@
 		E25FFEA51FC6EDA500F1F3A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E25FFEA31FC6EDA500F1F3A5 /* LaunchScreen.storyboard */; };
 		E25FFEBB1FC6EFDC00F1F3A5 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25FFEBA1FC6EFDC00F1F3A5 /* Event.swift */; };
 		E25FFEBD1FC6F08A00F1F3A5 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25FFEBC1FC6F08A00F1F3A5 /* EventManager.swift */; };
-		E25FFEBF1FC6F1CD00F1F3A5 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25FFEBE1FC6F1CD00F1F3A5 /* AddViewController.swift */; };
+		E25FFEBF1FC6F1CD00F1F3A5 /* AddDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25FFEBE1FC6F1CD00F1F3A5 /* AddDetailsViewController.swift */; };
 		E25FFEC11FC6F2B800F1F3A5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25FFEC01FC6F2B800F1F3A5 /* DetailViewController.swift */; };
 		E25FFEC31FC6F39A00F1F3A5 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25FFEC21FC6F39A00F1F3A5 /* ListCell.swift */; };
 		E25FFECE1FC6F5FC00F1F3A5 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25FFEC51FC6F4CA00F1F3A5 /* Nimble.framework */; };
@@ -50,7 +53,7 @@
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 7;
+			dstSubfolderSpec = 10;
 			files = (
 				E25FFED31FC6F61700F1F3A5 /* Nimble.framework in CopyFiles */,
 				E25FFED41FC6F61700F1F3A5 /* Quick.framework in CopyFiles */,
@@ -60,6 +63,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E2101E6E1FCAFE1B00515A6F /* EventSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventSpec.swift; sourceTree = "<group>"; };
+		E2101E701FCB9F7E00515A6F /* EventManagerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventManagerSpec.swift; sourceTree = "<group>"; };
+		E2101E721FCBAD7B00515A6F /* MapViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewControllerSpec.swift; sourceTree = "<group>"; };
 		E25FFE941FC6EDA500F1F3A5 /* EventKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25FFE971FC6EDA500F1F3A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E25FFE991FC6EDA500F1F3A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,7 +78,7 @@
 		E25FFEB11FC6EDA500F1F3A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E25FFEBA1FC6EFDC00F1F3A5 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		E25FFEBC1FC6F08A00F1F3A5 /* EventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
-		E25FFEBE1FC6F1CD00F1F3A5 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		E25FFEBE1FC6F1CD00F1F3A5 /* AddDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDetailsViewController.swift; sourceTree = "<group>"; };
 		E25FFEC01FC6F2B800F1F3A5 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E25FFEC21FC6F39A00F1F3A5 /* ListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		E25FFEC51FC6F4CA00F1F3A5 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
@@ -137,7 +143,7 @@
 				E25FFE9E1FC6EDA500F1F3A5 /* EventKeeper.xcdatamodeld */,
 				E25FFEBA1FC6EFDC00F1F3A5 /* Event.swift */,
 				E25FFEBC1FC6F08A00F1F3A5 /* EventManager.swift */,
-				E25FFEBE1FC6F1CD00F1F3A5 /* AddViewController.swift */,
+				E25FFEBE1FC6F1CD00F1F3A5 /* AddDetailsViewController.swift */,
 				E25FFEC01FC6F2B800F1F3A5 /* DetailViewController.swift */,
 				E25FFEC21FC6F39A00F1F3A5 /* ListCell.swift */,
 			);
@@ -149,6 +155,9 @@
 			children = (
 				E25FFEB11FC6EDA500F1F3A5 /* Info.plist */,
 				E25FFED51FC6F6B600F1F3A5 /* ViewControllerSpec.swift */,
+				E2101E6E1FCAFE1B00515A6F /* EventSpec.swift */,
+				E2101E701FCB9F7E00515A6F /* EventManagerSpec.swift */,
+				E2101E721FCBAD7B00515A6F /* MapViewControllerSpec.swift */,
 			);
 			path = EventKeeperTests;
 			sourceTree = "<group>";
@@ -269,7 +278,7 @@
 			files = (
 				E25FFEBD1FC6F08A00F1F3A5 /* EventManager.swift in Sources */,
 				E25FFEBB1FC6EFDC00F1F3A5 /* Event.swift in Sources */,
-				E25FFEBF1FC6F1CD00F1F3A5 /* AddViewController.swift in Sources */,
+				E25FFEBF1FC6F1CD00F1F3A5 /* AddDetailsViewController.swift in Sources */,
 				E25FFEA01FC6EDA500F1F3A5 /* EventKeeper.xcdatamodeld in Sources */,
 				E25FFED81FC7566E00F1F3A5 /* MapViewController.swift in Sources */,
 				E25FFE9A1FC6EDA500F1F3A5 /* ViewController.swift in Sources */,
@@ -283,7 +292,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2101E711FCB9F7E00515A6F /* EventManagerSpec.swift in Sources */,
 				E25FFED61FC6F6B600F1F3A5 /* ViewControllerSpec.swift in Sources */,
+				E2101E731FCBAD7B00515A6F /* MapViewControllerSpec.swift in Sources */,
+				E2101E6F1FCAFE1B00515A6F /* EventSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +509,7 @@
 				E25FFEB61FC6EDA500F1F3A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E25FFEB71FC6EDA500F1F3A5 /* Build configuration list for PBXNativeTarget "EventKeeperTests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +518,7 @@
 				E25FFEB91FC6EDA500F1F3A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
