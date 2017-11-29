@@ -15,7 +15,7 @@ class ViewController: UITableViewController {
     }
     
     // TODO: Replace array with CoreData
-    let array = ["Foo", "Bar", "Blah"]
+    let array = EventManager.events
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,13 +38,13 @@ class ViewController: UITableViewController {
     
     // a delegate that tells the table view how many rows are in the table
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return array.count
+        return EventManager.events.count
 //        return EventManager.events.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell")!
-        cell.textLabel?.text = array[indexPath.item]
+        cell.textLabel?.text = EventManager.events[indexPath.item].title
         cell.backgroundColor = UIColor.green.withAlphaComponent(0.2)
         cell.textLabel?.textColor = UIColor.blue.withAlphaComponent(0.8)
         return cell
@@ -65,6 +65,7 @@ class ViewController: UITableViewController {
 //        cell.event = event
 //        return cell
     }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "detailview"){
@@ -73,5 +74,14 @@ class ViewController: UITableViewController {
             detailview.preEvent = cell.event
         }
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if(segue.identifier == "AddDetailsViewController"){
+//            let cell = sender as! ListCell
+//            let detailview = segue.destination as! AddDetailsViewController
+//            AddDetailsViewController.preEvent = cell.event
+//        }
+//    }
+    
 }
 

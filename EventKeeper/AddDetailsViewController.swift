@@ -13,14 +13,20 @@ class AddDetailsViewController: UIViewController {
     
     @IBOutlet var titleText: UITextField!
     @IBOutlet var eventDetails: UITextView!
-//    @IBOutlet var doneButton: UIBarButtonItem!
     @IBOutlet var saveButton: UIButton!
     @IBOutlet var cancelButton: UIButton!
     
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
+
+            // MOVING THIS HERE FROM THE DETAILVIEWCONTROLLER
+//    var preEvent : Event?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // MOVING THESE HERE FROM THE DETAILVIEWCONTROLLER
+//        self.title = preEvent?.title
+//        self.eventDetails.text = preEvent?.details
         
         // Do any additional setup after loading the view.
         print("in AddDetailsViewController")
@@ -56,10 +62,6 @@ class AddDetailsViewController: UIViewController {
 //        titleText.resignFirstResponder()
 //    }
     
-    @IBAction func cancelButton_click(_ sender: AnyObject) {
-            print("Cancel button clicked")
-    }
-    
     func handleButtonStates(){
         //handle cancel button
         cancelButton.isEnabled = true
@@ -74,20 +76,26 @@ class AddDetailsViewController: UIViewController {
             saveButton.setTitleColor(UIColor.lightGray, for: UIControlState())
         }
     }
-    
-    @IBAction func saveButton_click(_ sender: AnyObject) {
+
+    @IBAction func saveButton_click(_ sender: Any) {
         print("Save button clicked")
         
-        activityIndicator.startAnimating()
+//        activityIndicator.startAnimating()
         
-        EventManager.AddEvent(titleText.text!, details: eventDetails.text, locations: nil) // TODO: This should not be nil
+        EventManager.AddEvent(titleText.text!, details: eventDetails.text, locations: nil) // TODO: The location should not be nil
+//        titleText.text = ""
+//        eventDetails.text = ""
+        
+//        let time = DispatchTime.now() + Double(Int64(0.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+//        DispatchQueue.main.asyncAfter(deadline: time){
+//            self.activityIndicator.stopAnimating()
+//        }
+    }
+
+    @IBAction func cancelButton_click(_ sender: Any) {
+        print("Cancel button clicked")
         titleText.text = ""
         eventDetails.text = ""
-        
-        let time = DispatchTime.now() + Double(Int64(0.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-        DispatchQueue.main.asyncAfter(deadline: time){
-            self.activityIndicator.stopAnimating()
-        }
     }
     
     /*
