@@ -147,7 +147,17 @@ class MapViewControllerSpec: QuickSpec {
                 _ = sut.view
                 expect(sut.addressField).toNot(beNil())
             }
-            
+
+            it("has Address search button") {
+                let storyboard = UIStoryboard(name: "Main",
+                                              bundle: nil)
+                let sut = storyboard
+                    .instantiateViewController(
+                        withIdentifier: "MapViewController")
+                    as! MapViewController
+                _ = sut.view
+                expect(sut.searchButton).toNot(beNil())
+            }
 //            it("searchAddress - returns coordinates of specified address") {
 //                let storyboard = UIStoryboard(name: "Main",
 //                                              bundle: nil)
@@ -158,8 +168,36 @@ class MapViewControllerSpec: QuickSpec {
 //                _ = sut.view
 //                sut.addressField.text = "222 W Merchandise Mart Plaza, Chicago, IL 60654"
 //                sut.searchButton.sendActions(for: UIControlEvents.touchUpInside)
+//                
+//                let annotationList = sut.mapView.annotations
+//                var latitudeList: [Double] = []
+//                var longitudeList: [Double] = []
+//                for annotation in annotationList {
+//                    latitudeList.append(annotation.coordinate.latitude)
+//                    longitudeList.append(annotation.coordinate.longitude)
+//                }
+//                expect(latitudeList).to(contain(40.0))
+//                expect(longitudeList).to(contain(105.28))
+//                
+//                
 //                expect("Foo").to(equal("Bar"))
 //            }
+            
+            it("searchAddress - populates coordinates fields with returned coordinates") {
+                let storyboard = UIStoryboard(name: "Main",
+                                              bundle: nil)
+                let sut = storyboard
+                    .instantiateViewController(
+                        withIdentifier: "MapViewController")
+                    as! MapViewController
+                _ = sut.view
+                sut.addressField.text = "222 W Merchandise Mart Plaza, Chicago, IL 60654"
+                sut.searchButton.sendActions(for: UIControlEvents.touchUpInside)
+                
+                sut.searchButton.sendActions(for: UIControlEvents.touchUpInside)
+                expect(sut.latitudeField.text).toEventually(equal("41.8885968"))
+                expect(sut.longitudeField.text).toEventually(equal("-87.6354407"))
+            }
         }
     }
 }

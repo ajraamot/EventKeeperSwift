@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelegate {
     var mapView: MKMapView!
@@ -26,6 +27,7 @@ class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelega
     var latitude: Double = 0.0
     var longitude: Double = 0.0
     
+    var searchButton = UIButton()
     var goButton = UIButton()
     var saveButton = UIButton()
     
@@ -65,7 +67,7 @@ class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelega
         view.addSubview(annotationField)
         
         // address field
-        addressField = UITextField(frame: CGRect(x: 20, y: 100, width: 300, height: 20))
+        addressField = UITextField(frame: CGRect(x: 20, y: 100, width: 280, height: 20))
         addressField.placeholder = "address"
         addressField.textColor = UIColor.black
         addressField.delegate = self
@@ -73,8 +75,14 @@ class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelega
         addressField.borderStyle = UITextBorderStyle.roundedRect
         addressField.clearsOnBeginEditing = true
         view.addSubview(addressField)
+
+        searchButton = UIButton(frame: CGRect(x: 290, y: 100, width: 60, height: 20))
+        searchButton.backgroundColor = .blue
+        searchButton.tintColor = .white
+        searchButton.setTitle("Search", for: .normal)
+        searchButton.addTarget(self, action:#selector(self.searchButton_click), for: .touchUpInside)
+        self.view.addSubview(searchButton)
         
-            
         // to add coordinate fields
         latitudeField = UITextField(frame: CGRect(x: 20, y: 120, width: 100, height: 20))
         latitudeField.placeholder = "latitude"
@@ -126,6 +134,29 @@ class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelega
         
         //        mapView!.animatesDrop = true
         //        mapView!.pinTintColor = .purple
+    }
+    
+    
+    func searchButton_click(sender: UIButton) {
+//        To convert address to coordinates (Need to import CoreLocation)
+//         
+//         let address = "1 Infinite Loop, Cupertino, CA 95014"
+//         
+        let address = addressField.text
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(address!) { (placemarks, error) in guard
+        let placemarks = placemarks,
+        let location = placemarks.first?.location
+        else {
+         // handle no location found
+        return
+        }
+            self.latitudeField.text = String(location.coordinate.latitude)
+            self.longitudeField.text = String(location.coordinate.longitude)
+        }
+         
+        
+       
     }
     
     func goButton_click(sender: UIButton){
@@ -199,27 +230,6 @@ class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelega
     //        return pinView
     //    }
 }
-
-
-/* To convert address to coordinates (Need to import CoreLocation)
- 
- let address = "1 Infinite Loop, Cupertino, CA 95014"
- 
- let geoCoder = CLGeocoder()
- geoCoder.geocodeAddressString(address) { (placemarks, error) in
- guard
- let placemarks = placemarks,
- let location = placemarks.first?.location
- else {
- // handle no location found
- return
- }
- 
- // Use your location
- }
- 
- */
-
 
 
 /* import UIKit
