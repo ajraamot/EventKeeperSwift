@@ -12,10 +12,10 @@ import MapKit
 class EventManager: NSObject {
     static var events = [Event]()
     
-    class func AddEvent(_ title: String, details: String?, locations: Array<CLLocationCoordinate2D?>?
+    class func AddEvent(_ title: String, details: String?, location: CLLocationCoordinate2D?
 //        , photos: Array<UIImage>
         ){
-        let e = Event(title: title, details: details, locations: locations)
+        let e = Event(title: title, details: details, location: location)
         
 //        let e = Event(title: title, details: details, locations: Array<CLLocationCoordinate2D>, photos: Array<UIImage>)
         
@@ -25,6 +25,7 @@ class EventManager: NSObject {
     class func DeleteEvent(_ id: Int){
         events.remove(at: id)
     }
+    
     
     class func GetEvent(_ id: Int) -> Event {
         if(events.count > 0){

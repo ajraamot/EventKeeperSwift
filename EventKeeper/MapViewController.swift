@@ -25,6 +25,9 @@ class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelega
     var longitude: Double = 0.0
     
     var goButton = UIButton()
+    var saveButton = UIButton()
+    
+    var areCoordinatesValid: Bool = false
     
     override func loadView() {
         mapView = MKMapView()
@@ -50,7 +53,7 @@ class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelega
         trailingConstraint.isActive = true
         
         // to add coordinate fields
-        latitudeField = UITextField(frame: CGRect(x: 50, y: 120, width: 100, height: 20))
+        latitudeField = UITextField(frame: CGRect(x: 20, y: 120, width: 100, height: 20))
         latitudeField.placeholder = "latitude"
         latitudeField.textColor = UIColor.black
         latitudeField.delegate = self
@@ -59,7 +62,7 @@ class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelega
         latitudeField.clearsOnBeginEditing = true
         view.addSubview(latitudeField)
         
-        longitudeField = UITextField(frame: CGRect(x: 150, y: 120, width: 100, height: 20))
+        longitudeField = UITextField(frame: CGRect(x: 120, y: 120, width: 100, height: 20))
         longitudeField.placeholder = "longitude"
         longitudeField.textColor = UIColor.black
         longitudeField.delegate = self
@@ -68,12 +71,20 @@ class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelega
         longitudeField.clearsOnBeginEditing = true
         view.addSubview(longitudeField)
         
-        goButton = UIButton(frame: CGRect(x: 280, y: 120, width: 30, height: 20))
+        goButton = UIButton(frame: CGRect(x: 225, y: 120, width: 30, height: 20))
         goButton.backgroundColor = .blue
         goButton.tintColor = .white
         goButton.setTitle("Go!", for: .normal)
         goButton.addTarget(self, action:#selector(self.goButton_click), for: .touchUpInside)
         self.view.addSubview(goButton)
+        
+        saveButton = UIButton(frame: CGRect(x: 260, y: 120, width: 50, height: 20))
+        saveButton.backgroundColor = .gray
+        saveButton.tintColor = .white
+        saveButton.setTitle("Save", for: .normal)
+        saveButton.addTarget(self, action:#selector(self.saveButton_click), for: .touchUpInside)
+        saveButton.isEnabled = false
+        self.view.addSubview(saveButton)
     }
     
     override func viewDidLoad() {
@@ -97,7 +108,7 @@ class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelega
     }
     
     func goButton_click(sender: UIButton){
-        print("button Clicked")
+        print("go button Clicked")
         if !((latitudeField.text?.isEmpty)! || (longitudeField.text?.isEmpty)!) {
             latitude = Double(latitudeField.text!)!
             longitude = Double(longitudeField.text!)!
@@ -106,6 +117,20 @@ class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelega
             let inputLocation = MKPointAnnotation()
             inputLocation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
             mapView.addAnnotation(inputLocation)
+            areCoordinatesValid = true
+            saveButton.backgroundColor = .blue
+            saveButton.isEnabled = true
+        }
+        
+    }
+    
+    func saveButton_click(sender: UIButton) {
+        print("save button Clicked")
+        if areCoordinatesValid {
+
+            EventManager.AddEvent(
+//                titleText.text!, details: eventDetails.text, 
+                "Foo", details: "Bar", location: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
         }
         
     }

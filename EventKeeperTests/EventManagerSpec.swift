@@ -22,7 +22,7 @@ class EventManagerSpec: QuickSpec {
             it("adding Event increases events array size by one") {
                 expect(EventManager.events.count).to(equal(0))
 //                let event = Event(title: "Foo", details: "Bar")
-                EventManager.AddEvent("Foo", details: "Bar", locations: nil)
+                EventManager.AddEvent("Foo", details: "Bar", location: nil)
                 // TODO: locations should not be nil
                 expect(EventManager.events.count).to(equal(1))
             }

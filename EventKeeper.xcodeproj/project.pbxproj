@@ -27,6 +27,7 @@
 		E25FFED41FC6F61700F1F3A5 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E25FFED21FC6F61700F1F3A5 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E25FFED61FC6F6B600F1F3A5 /* ViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25FFED51FC6F6B600F1F3A5 /* ViewControllerSpec.swift */; };
 		E25FFED81FC7566E00F1F3A5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25FFED71FC7566E00F1F3A5 /* MapViewController.swift */; };
+		E2E87C2E1FD1C959009EA536 /* AddDetailsViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E87C2D1FD1C959009EA536 /* AddDetailsViewControllerSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		E25FFED21FC6F61700F1F3A5 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		E25FFED51FC6F6B600F1F3A5 /* ViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSpec.swift; sourceTree = "<group>"; };
 		E25FFED71FC7566E00F1F3A5 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E2E87C2D1FD1C959009EA536 /* AddDetailsViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDetailsViewControllerSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				E2101E6E1FCAFE1B00515A6F /* EventSpec.swift */,
 				E2101E701FCB9F7E00515A6F /* EventManagerSpec.swift */,
 				E2101E721FCBAD7B00515A6F /* MapViewControllerSpec.swift */,
+				E2E87C2D1FD1C959009EA536 /* AddDetailsViewControllerSpec.swift */,
 			);
 			path = EventKeeperTests;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2101E711FCB9F7E00515A6F /* EventManagerSpec.swift in Sources */,
+				E2E87C2E1FD1C959009EA536 /* AddDetailsViewControllerSpec.swift in Sources */,
 				E25FFED61FC6F6B600F1F3A5 /* ViewControllerSpec.swift in Sources */,
 				E2101E731FCBAD7B00515A6F /* MapViewControllerSpec.swift in Sources */,
 				E2101E6F1FCAFE1B00515A6F /* EventSpec.swift in Sources */,

@@ -102,7 +102,7 @@ class AddDetailsViewController: UIViewController {
         
 //        activityIndicator.startAnimating()
         
-        EventManager.AddEvent(titleText.text!, details: eventDetails.text, locations: nil) // TODO: The location should not be nil
+        EventManager.AddEvent(titleText.text!, details: eventDetails.text, location: nil) // TODO: The location should not be nil
 //        titleText.text = ""
 //        eventDetails.text = ""
         

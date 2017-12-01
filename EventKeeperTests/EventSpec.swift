@@ -31,10 +31,8 @@ class EventSpec: QuickSpec {
 
             it("sets location") {
                 let boulder = CLLocationCoordinate2D(latitude: 40.0, longitude: -105.26)
-                var locations = [CLLocationCoordinate2D]()
-                locations.append(boulder)
-                let event = Event(title: "Foo", details: "Bar", locations: locations)
-                expect(event.locations?[0]?.latitude).to(equal(40.0))
+                let event = Event(title: "Foo", details: "Bar", location: boulder)
+                expect(event.location?.latitude).to(equal(40.0))
             }
 //
 //            it("sets timestamp") {
