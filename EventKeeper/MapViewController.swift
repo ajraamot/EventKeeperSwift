@@ -59,7 +59,7 @@ class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelega
         latitudeField.delegate = self
         latitudeField.backgroundColor? = UIColor.clear
         latitudeField.borderStyle = UITextBorderStyle.roundedRect
-        latitudeField.clearsOnBeginEditing = true
+        latitudeField.clearsOnBeginEditing = false
         view.addSubview(latitudeField)
         
         longitudeField = UITextField(frame: CGRect(x: 120, y: 120, width: 100, height: 20))
@@ -68,7 +68,7 @@ class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelega
         longitudeField.delegate = self
         longitudeField.backgroundColor? = UIColor.clear
         longitudeField.borderStyle = UITextBorderStyle.roundedRect
-        longitudeField.clearsOnBeginEditing = true
+        longitudeField.clearsOnBeginEditing = false
         view.addSubview(longitudeField)
         
         goButton = UIButton(frame: CGRect(x: 225, y: 120, width: 30, height: 20))
@@ -103,8 +103,6 @@ class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelega
         
         //        mapView!.animatesDrop = true
         //        mapView!.pinTintColor = .purple
-        
-        
     }
     
     func goButton_click(sender: UIButton){

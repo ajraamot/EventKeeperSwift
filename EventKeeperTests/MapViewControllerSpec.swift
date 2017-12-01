@@ -26,6 +26,20 @@ class MapViewControllerSpec: QuickSpec {
                 _ = sut.view
                 expect(sut.mapView).toNot(beNil())
             }
+
+            // TODO: Figure out how to test - this blows up if I try
+//            it("has toggle to switch between views") {
+//                let storyboard = UIStoryboard(name: "Main",
+//                                              bundle: nil)
+//                let sut = storyboard
+//                    .instantiateViewController(
+//                        withIdentifier: "MapViewController")
+//                    as! MapViewController
+//                _ = sut.view
+//                expect(sut.view.subviews).to(contain(AnyClass(UISegmentedControl)))
+//            }
+
+            
             it("has Coordinates text fields") {
                 let storyboard = UIStoryboard(name: "Main",
                                               bundle: nil)
@@ -38,6 +52,17 @@ class MapViewControllerSpec: QuickSpec {
                 expect(sut.longitudeField).toNot(beNil())
             }
             
+//            it("has Annotation text fields") {
+//                let storyboard = UIStoryboard(name: "Main",
+//                                              bundle: nil)
+//                let sut = storyboard
+//                    .instantiateViewController(
+//                        withIdentifier: "MapViewController")
+//                    as! MapViewController
+//                _ = sut.view
+//                expect(sut.annotationField).toNot(beNil())
+//            }
+            
             it("has Go! and Save buttons") {
                 let storyboard = UIStoryboard(name: "Main",
                                               bundle: nil)
@@ -49,6 +74,48 @@ class MapViewControllerSpec: QuickSpec {
                 expect(sut.goButton).toNot(beNil())
                 expect(sut.saveButton).toNot(beNil())
             }
+            
+            // TODO: Figure out why this fails
+//            it("goButton_click - moves map to valid coordinates") {
+//                let storyboard = UIStoryboard(name: "Main",
+//                                              bundle: nil)
+//                let sut = storyboard
+//                    .instantiateViewController(
+//                        withIdentifier: "MapViewController")
+//                    as! MapViewController
+//                _ = sut.view
+//                sut.latitudeField.text = "40"
+//                sut.longitudeField.text = "105.28"
+//                sut.goButton.sendActions(for: UIControlEvents.touchUpInside)
+//                expect(sut.mapView.centerCoordinate.latitude).toEventually(equal(40))
+//                expect(sut.mapView.centerCoordinate.longitude).toEventually(equal(-105.28))
+//                
+//            }
+
+            it("goButton_click - puts a pin annotation at specified coordinates") {
+                let storyboard = UIStoryboard(name: "Main",
+                                              bundle: nil)
+                let sut = storyboard
+                    .instantiateViewController(
+                        withIdentifier: "MapViewController")
+                    as! MapViewController
+                _ = sut.view
+                sut.latitudeField.text = "40"
+                sut.longitudeField.text = "105.28"
+                let initialCount = sut.mapView.annotations.count
+                sut.goButton.sendActions(for: UIControlEvents.touchUpInside)
+                expect(sut.mapView.annotations.count).to(equal(initialCount + 1))
+                
+                let annotationList = sut.mapView.annotations
+                var latitudeList: [Double] = []
+                var longitudeList: [Double] = []
+                for annotation in annotationList {
+                    latitudeList.append(annotation.coordinate.latitude)
+                    longitudeList.append(annotation.coordinate.longitude)
+                }
+                expect(latitudeList).to(contain(40.0))
+                expect(longitudeList).to(contain(105.28))
+            }        
         }
     }
 }

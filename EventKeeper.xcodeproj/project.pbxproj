@@ -28,6 +28,8 @@
 		E25FFED61FC6F6B600F1F3A5 /* ViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25FFED51FC6F6B600F1F3A5 /* ViewControllerSpec.swift */; };
 		E25FFED81FC7566E00F1F3A5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25FFED71FC7566E00F1F3A5 /* MapViewController.swift */; };
 		E2E87C2E1FD1C959009EA536 /* AddDetailsViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E87C2D1FD1C959009EA536 /* AddDetailsViewControllerSpec.swift */; };
+		E2E87C301FD1CC98009EA536 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E87C2F1FD1CC98009EA536 /* TabBarViewController.swift */; };
+		E2E87C321FD1CCAE009EA536 /* TabBarViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E87C311FD1CCAE009EA536 /* TabBarViewControllerSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		E25FFED51FC6F6B600F1F3A5 /* ViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSpec.swift; sourceTree = "<group>"; };
 		E25FFED71FC7566E00F1F3A5 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E2E87C2D1FD1C959009EA536 /* AddDetailsViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDetailsViewControllerSpec.swift; sourceTree = "<group>"; };
+		E2E87C2F1FD1CC98009EA536 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		E2E87C311FD1CCAE009EA536 /* TabBarViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewControllerSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,7 @@
 				E25FFEBE1FC6F1CD00F1F3A5 /* AddDetailsViewController.swift */,
 				E25FFEC01FC6F2B800F1F3A5 /* DetailViewController.swift */,
 				E25FFEC21FC6F39A00F1F3A5 /* ListCell.swift */,
+				E2E87C2F1FD1CC98009EA536 /* TabBarViewController.swift */,
 			);
 			path = EventKeeper;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 				E2101E701FCB9F7E00515A6F /* EventManagerSpec.swift */,
 				E2101E721FCBAD7B00515A6F /* MapViewControllerSpec.swift */,
 				E2E87C2D1FD1C959009EA536 /* AddDetailsViewControllerSpec.swift */,
+				E2E87C311FD1CCAE009EA536 /* TabBarViewControllerSpec.swift */,
 			);
 			path = EventKeeperTests;
 			sourceTree = "<group>";
@@ -287,6 +293,7 @@
 				E25FFE9A1FC6EDA500F1F3A5 /* ViewController.swift in Sources */,
 				E25FFEC31FC6F39A00F1F3A5 /* ListCell.swift in Sources */,
 				E25FFE981FC6EDA500F1F3A5 /* AppDelegate.swift in Sources */,
+				E2E87C301FD1CC98009EA536 /* TabBarViewController.swift in Sources */,
 				E25FFEC11FC6F2B800F1F3A5 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,6 +305,7 @@
 				E2101E711FCB9F7E00515A6F /* EventManagerSpec.swift in Sources */,
 				E2E87C2E1FD1C959009EA536 /* AddDetailsViewControllerSpec.swift in Sources */,
 				E25FFED61FC6F6B600F1F3A5 /* ViewControllerSpec.swift in Sources */,
+				E2E87C321FD1CCAE009EA536 /* TabBarViewControllerSpec.swift in Sources */,
 				E2101E731FCBAD7B00515A6F /* MapViewControllerSpec.swift in Sources */,
 				E2101E6F1FCAFE1B00515A6F /* EventSpec.swift in Sources */,
 			);
