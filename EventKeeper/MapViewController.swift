@@ -10,39 +10,28 @@ import Foundation
 import UIKit
 import MapKit
 
-class MapViewController : UIViewController, MKMapViewDelegate {
+class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelegate {
     var mapView: MKMapView!
     
     let workLocation = CLLocationCoordinate2D(latitude: 41.888355, longitude: -87.635719)
     let work = MKPointAnnotation()
     let homeLocation = CLLocationCoordinate2D(latitude: 41.938938, longitude: -87.638602)
     let home = MKPointAnnotation()
+
+    @IBOutlet var latitudeField: UITextField!;
+    @IBOutlet var longitudeField: UITextField!;
+
+    var latitude: Double = 0.0
+    var longitude: Double = 0.0
     
-    
-    /* To convert address to coordinates (Need to import CoreLocation)
-     
-     let address = "1 Infinite Loop, Cupertino, CA 95014"
-     
-     let geoCoder = CLGeocoder()
-     geoCoder.geocodeAddressString(address) { (placemarks, error) in
-     guard
-     let placemarks = placemarks,
-     let location = placemarks.first?.location
-     else {
-     // handle no location found
-     return
-     }
-     
-     // Use your location
-     }
-     
-     */
-    
+    var goButton = UIButton()
     
     override func loadView() {
         mapView = MKMapView()
         view = mapView
         
+        
+        // To have the Standard, Hybrid, Satellite switch
         let segmentedControl = UISegmentedControl(items:["Standard", "Hybrid", "Satellite"])
         segmentedControl.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         segmentedControl.selectedSegmentIndex = 0
@@ -52,8 +41,6 @@ class MapViewController : UIViewController, MKMapViewDelegate {
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(segmentedControl)
         
-        //109
-        //        let topConstraint = segmentedControl.topAnchor.constraint(equalTo: view.topAnchor)
         let topConstraint = segmentedControl.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 8)
         let leadingConstraint = segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor)
         let trailingConstraint = segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor)
@@ -61,6 +48,32 @@ class MapViewController : UIViewController, MKMapViewDelegate {
         topConstraint.isActive = true
         leadingConstraint.isActive = true
         trailingConstraint.isActive = true
+        
+        // to add coordinate fields
+        latitudeField = UITextField(frame: CGRect(x: 50, y: 120, width: 100, height: 20))
+        latitudeField.placeholder = "latitude"
+        latitudeField.textColor = UIColor.black
+        latitudeField.delegate = self
+        latitudeField.backgroundColor? = UIColor.clear
+        latitudeField.borderStyle = UITextBorderStyle.roundedRect
+        latitudeField.clearsOnBeginEditing = true
+        view.addSubview(latitudeField)
+        
+        longitudeField = UITextField(frame: CGRect(x: 150, y: 120, width: 100, height: 20))
+        longitudeField.placeholder = "longitude"
+        longitudeField.textColor = UIColor.black
+        longitudeField.delegate = self
+        longitudeField.backgroundColor? = UIColor.clear
+        longitudeField.borderStyle = UITextBorderStyle.roundedRect
+        longitudeField.clearsOnBeginEditing = true
+        view.addSubview(longitudeField)
+        
+        goButton = UIButton(frame: CGRect(x: 280, y: 120, width: 30, height: 20))
+        goButton.backgroundColor = .blue
+        goButton.tintColor = .white
+        goButton.setTitle("Go!", for: .normal)
+        goButton.addTarget(self, action:#selector(self.goButton_click), for: .touchUpInside)
+        self.view.addSubview(goButton)
     }
     
     override func viewDidLoad() {
@@ -80,6 +93,20 @@ class MapViewController : UIViewController, MKMapViewDelegate {
         //        mapView!.animatesDrop = true
         //        mapView!.pinTintColor = .purple
         
+        
+    }
+    
+    func goButton_click(sender: UIButton){
+        print("button Clicked")
+        if !((latitudeField.text?.isEmpty)! || (longitudeField.text?.isEmpty)!) {
+            latitude = Double(latitudeField.text!)!
+            longitude = Double(longitudeField.text!)!
+            let inputCoordinates = CLLocation(latitude: latitude, longitude: longitude)
+            centerMapOnLocation(location: inputCoordinates)
+            let inputLocation = MKPointAnnotation()
+            inputLocation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            mapView.addAnnotation(inputLocation)
+        }
         
     }
     
@@ -123,15 +150,27 @@ class MapViewController : UIViewController, MKMapViewDelegate {
     //        
     //        return pinView
     //    }
-    
-    
-    func returnThree() -> Int {
-        return 2
-    }
-    
-    
-    
 }
+
+
+/* To convert address to coordinates (Need to import CoreLocation)
+ 
+ let address = "1 Infinite Loop, Cupertino, CA 95014"
+ 
+ let geoCoder = CLGeocoder()
+ geoCoder.geocodeAddressString(address) { (placemarks, error) in
+ guard
+ let placemarks = placemarks,
+ let location = placemarks.first?.location
+ else {
+ // handle no location found
+ return
+ }
+ 
+ // Use your location
+ }
+ 
+ */
 
 
 

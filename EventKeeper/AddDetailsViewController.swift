@@ -12,11 +12,13 @@ import MapKit
 class AddDetailsViewController: UIViewController {
     
     @IBOutlet var titleText: UITextField!
+    
+    @IBOutlet var addressText: UITextField!
     @IBOutlet var eventDetails: UITextView!
     @IBOutlet var saveButton: UIButton!
     @IBOutlet var cancelButton: UIButton!
     
-    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+//    @IBOutlet var activityIndicator: UIActivityIndicatorView!
 
             // MOVING THIS HERE FROM THE DETAILVIEWCONTROLLER
 //    var preEvent : Event?
@@ -32,6 +34,8 @@ class AddDetailsViewController: UIViewController {
         print("in AddDetailsViewController")
         titleText.backgroundColor = UIColor.blue.withAlphaComponent(0.1)
         eventDetails.backgroundColor = UIColor.blue.withAlphaComponent(0.1)
+        
+        addressText.backgroundColor = UIColor.blue.withAlphaComponent(0.1)
         
         saveButton.isEnabled = false
         
@@ -77,6 +81,22 @@ class AddDetailsViewController: UIViewController {
         }
     }
 
+    @IBAction func addressEntered(_ sender: Any) {
+        //
+        let address = addressText.text
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(address!) { (placemarks, error) in
+            guard
+                let placemarks = placemarks,
+                let location = placemarks.first?.location
+                else {
+                    // handle no location found
+                    return
+            }
+        }
+    }
+
+    
     @IBAction func saveButton_click(_ sender: Any) {
         print("Save button clicked")
         
