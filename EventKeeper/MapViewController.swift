@@ -14,11 +14,6 @@ import CoreLocation
 class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelegate {
     var mapView: MKMapView!
     
-    let workLocation = CLLocationCoordinate2D(latitude: 41.888355, longitude: -87.635719)
-    let work = MKPointAnnotation()
-    let homeLocation = CLLocationCoordinate2D(latitude: 41.938938, longitude: -87.638602)
-    let home = MKPointAnnotation()
-
     @IBOutlet var latitudeField: UITextField!
     @IBOutlet var longitudeField: UITextField!
     @IBOutlet var annotationField: UITextField!
@@ -124,13 +119,6 @@ class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelega
         let initialLocation = CLLocation(latitude: 41.888888, longitude: -87.654321)
         centerMapOnLocation(location: initialLocation)
         
-        // placing pins on the map
-        work.coordinate = workLocation
-        work.title = "Allstate"
-        home.coordinate = homeLocation
-        home.title = "Home"
-        mapView.addAnnotation(work)
-        mapView.addAnnotation(home)
         
         //        mapView!.animatesDrop = true
         //        mapView!.pinTintColor = .purple
