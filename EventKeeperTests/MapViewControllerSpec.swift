@@ -52,16 +52,16 @@ class MapViewControllerSpec: QuickSpec {
                 expect(sut.longitudeField).toNot(beNil())
             }
             
-//            it("has Annotation text fields") {
-//                let storyboard = UIStoryboard(name: "Main",
-//                                              bundle: nil)
-//                let sut = storyboard
-//                    .instantiateViewController(
-//                        withIdentifier: "MapViewController")
-//                    as! MapViewController
-//                _ = sut.view
-//                expect(sut.annotationField).toNot(beNil())
-//            }
+            it("has Annotation text fields") {
+                let storyboard = UIStoryboard(name: "Main",
+                                              bundle: nil)
+                let sut = storyboard
+                    .instantiateViewController(
+                        withIdentifier: "MapViewController")
+                    as! MapViewController
+                _ = sut.view
+                expect(sut.annotationField).toNot(beNil())
+            }
             
             it("has Go! and Save buttons") {
                 let storyboard = UIStoryboard(name: "Main",
@@ -115,7 +115,27 @@ class MapViewControllerSpec: QuickSpec {
                 }
                 expect(latitudeList).to(contain(40.0))
                 expect(longitudeList).to(contain(105.28))
-            }        
+            }
+            
+            it("goButton_click - add a label to the annotation pin") {
+                let storyboard = UIStoryboard(name: "Main",
+                                              bundle: nil)
+                let sut = storyboard
+                    .instantiateViewController(
+                        withIdentifier: "MapViewController")
+                    as! MapViewController
+                _ = sut.view
+                sut.latitudeField.text = "40"
+                sut.longitudeField.text = "105.28"
+                sut.annotationField.text = "Chautauqua Park"
+                sut.goButton.sendActions(for: UIControlEvents.touchUpInside)
+                let annotationList = sut.mapView.annotations
+                var labelList: [String] = []
+                for annotation in annotationList {
+                    labelList.append(annotation.title!!)
+                }
+                expect(labelList).to(contain("Chautauqua Park"))
+            }
         }
     }
 }

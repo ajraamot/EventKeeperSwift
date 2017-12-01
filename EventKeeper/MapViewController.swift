@@ -18,8 +18,9 @@ class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelega
     let homeLocation = CLLocationCoordinate2D(latitude: 41.938938, longitude: -87.638602)
     let home = MKPointAnnotation()
 
-    @IBOutlet var latitudeField: UITextField!;
-    @IBOutlet var longitudeField: UITextField!;
+    @IBOutlet var latitudeField: UITextField!
+    @IBOutlet var longitudeField: UITextField!
+    @IBOutlet var annotationField: UITextField!
 
     var latitude: Double = 0.0
     var longitude: Double = 0.0
@@ -52,6 +53,17 @@ class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelega
         leadingConstraint.isActive = true
         trailingConstraint.isActive = true
         
+        // annotation field
+        annotationField = UITextField(frame: CGRect(x: 20, y: 100, width: 150, height: 20))
+        annotationField.placeholder = "location name"
+        annotationField.textColor = UIColor.black
+        annotationField.delegate = self
+        annotationField.backgroundColor? = UIColor.clear
+        annotationField.borderStyle = UITextBorderStyle.roundedRect
+        annotationField.clearsOnBeginEditing = true
+        view.addSubview(annotationField)
+            
+            
         // to add coordinate fields
         latitudeField = UITextField(frame: CGRect(x: 20, y: 120, width: 100, height: 20))
         latitudeField.placeholder = "latitude"
@@ -112,8 +124,10 @@ class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelega
             longitude = Double(longitudeField.text!)!
             let inputCoordinates = CLLocation(latitude: latitude, longitude: longitude)
             centerMapOnLocation(location: inputCoordinates)
+            
             let inputLocation = MKPointAnnotation()
             inputLocation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            inputLocation.title = annotationField.text
             mapView.addAnnotation(inputLocation)
             areCoordinatesValid = true
             saveButton.backgroundColor = .blue
