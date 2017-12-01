@@ -136,6 +136,30 @@ class MapViewControllerSpec: QuickSpec {
                 }
                 expect(labelList).to(contain("Chautauqua Park"))
             }
+            
+            it("has Address text field") {
+                let storyboard = UIStoryboard(name: "Main",
+                                              bundle: nil)
+                let sut = storyboard
+                    .instantiateViewController(
+                        withIdentifier: "MapViewController")
+                    as! MapViewController
+                _ = sut.view
+                expect(sut.addressField).toNot(beNil())
+            }
+            
+//            it("searchAddress - returns coordinates of specified address") {
+//                let storyboard = UIStoryboard(name: "Main",
+//                                              bundle: nil)
+//                let sut = storyboard
+//                    .instantiateViewController(
+//                        withIdentifier: "MapViewController")
+//                    as! MapViewController
+//                _ = sut.view
+//                sut.addressField.text = "222 W Merchandise Mart Plaza, Chicago, IL 60654"
+//                sut.searchButton.sendActions(for: UIControlEvents.touchUpInside)
+//                expect("Foo").to(equal("Bar"))
+//            }
         }
     }
 }

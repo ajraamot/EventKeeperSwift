@@ -21,6 +21,7 @@ class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelega
     @IBOutlet var latitudeField: UITextField!
     @IBOutlet var longitudeField: UITextField!
     @IBOutlet var annotationField: UITextField!
+    @IBOutlet var addressField: UITextField!
 
     var latitude: Double = 0.0
     var longitude: Double = 0.0
@@ -54,15 +55,25 @@ class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelega
         trailingConstraint.isActive = true
         
         // annotation field
-        annotationField = UITextField(frame: CGRect(x: 20, y: 100, width: 150, height: 20))
-        annotationField.placeholder = "location name"
+        annotationField = UITextField(frame: CGRect(x: 20, y: 140, width: 150, height: 20))
+        annotationField.placeholder = "location label"
         annotationField.textColor = UIColor.black
         annotationField.delegate = self
         annotationField.backgroundColor? = UIColor.clear
         annotationField.borderStyle = UITextBorderStyle.roundedRect
         annotationField.clearsOnBeginEditing = true
         view.addSubview(annotationField)
-            
+        
+        // address field
+        addressField = UITextField(frame: CGRect(x: 20, y: 100, width: 300, height: 20))
+        addressField.placeholder = "address"
+        addressField.textColor = UIColor.black
+        addressField.delegate = self
+        addressField.backgroundColor? = UIColor.clear
+        addressField.borderStyle = UITextBorderStyle.roundedRect
+        addressField.clearsOnBeginEditing = true
+        view.addSubview(addressField)
+        
             
         // to add coordinate fields
         latitudeField = UITextField(frame: CGRect(x: 20, y: 120, width: 100, height: 20))
