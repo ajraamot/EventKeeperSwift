@@ -50,11 +50,11 @@ class AddDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func textTitleDidChange(){
+    @objc func textTitleDidChange(){
         handleButtonStates()
     }
     
-    func eventDetailsDidChange(){
+    @objc func eventDetailsDidChange(){
         handleButtonStates()
     }
     

@@ -125,7 +125,7 @@ class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelega
     }
     
     
-    func searchButton_click(sender: UIButton) {
+    @objc func searchButton_click(sender: UIButton) {
 //        To convert address to coordinates (Need to import CoreLocation)
 //         
 //         let address = "1 Infinite Loop, Cupertino, CA 95014"
@@ -147,7 +147,7 @@ class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelega
        
     }
     
-    func goButton_click(sender: UIButton){
+    @objc func goButton_click(sender: UIButton){
         print("go button Clicked")
         if !((latitudeField.text?.isEmpty)! || (longitudeField.text?.isEmpty)!) {
             latitude = Double(latitudeField.text!)!
@@ -166,7 +166,7 @@ class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelega
         
     }
     
-    func saveButton_click(sender: UIButton) {
+    @objc func saveButton_click(sender: UIButton) {
         print("save button Clicked")
         if areCoordinatesValid {
 
@@ -177,7 +177,7 @@ class MapViewController : UIViewController, MKMapViewDelegate, UITextFieldDelega
         
     }
     
-    func mapTypeChanged(_ segControl: UISegmentedControl) {
+    @objc func mapTypeChanged(_ segControl: UISegmentedControl) {
         switch segControl.selectedSegmentIndex {
         case 0: mapView.mapType = .standard
         case 1: mapView.mapType = .hybrid
